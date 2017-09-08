@@ -1,4 +1,4 @@
-# accountbinding
+# IDS登录&绑定（DEMO）
 
 > A Vue.js project
 
