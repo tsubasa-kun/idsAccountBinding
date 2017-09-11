@@ -9,7 +9,7 @@
             <span class="column-title">选择默认账号</span>
             <span class="donot-btn">不设置默认</span>
         </div>
-        <mt-checklist align="right" :options="accounts"></mt-checklist>
+        <mt-checklist align="right" v-model="value" :options="accounts"></mt-checklist>
         <mt-button type="danger" size="large" class="save-btn">保存</mt-button>
     </div>
 </template>
@@ -45,13 +45,14 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button, Checklist} from 'bh-mint-ui2';
+    import {Header, Button, Checklist, Cell} from 'bh-mint-ui2';
     import $ from 'jquery';
 
     export default {
         data() {
             return {
                 canSee: false,
+                value: [],
                 accounts: [
                     {
                         label: '121212',
@@ -75,7 +76,8 @@
         components: {
             [Header.name]: Header,
             [Button.name]: Button,
-            [Checklist.name]: Checklist
+            [Checklist.name]: Checklist,
+            [Cell.name]: Cell
         },
         methods: {
             changeCanSee: function () {
