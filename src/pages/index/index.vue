@@ -12,9 +12,9 @@
         </div>
         <div class="input-div mt10">
             <i class="iconfont icon-lock"></i>
-            <input type="text" class="input-input" placeholder="登录密码">
-            <i class="iconfont icon-visibility"></i>
-            <i class="iconfont icon-visibilityoff"></i>
+            <input id="pwd" type="password" class="input-input" placeholder="登录密码">
+            <i v-if="!canSee" class="iconfont icon-visibilityoff" @click="changeCanSee"></i>
+            <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
         </div>
         <span class="forget-tip">忘记密码？</span>
         <mt-button type="primary" size="large" class="bind-btn">绑定</mt-button>
@@ -129,9 +129,25 @@
 
 <script type="text/javascript">
     import {Button} from 'bh-mint-ui2';
+    import $ from 'jquery';
     export default {
+        data() {
+            return {
+                canSee: false
+            }
+        },
         components: {
-            Button
+            [Button.name]: Button
+        },
+        methods: {
+            changeCanSee: function () {
+                if (!this.canSee) {
+                    $('#pwd')[0].type = 'text';
+                } else {
+                    $('#pwd')[0].type = 'password';
+                }
+                this.canSee = !this.canSee;
+            }
         }
     }
 </script>
