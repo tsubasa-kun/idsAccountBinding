@@ -45,17 +45,12 @@
         padding: 10PX;
     }
 
-    .column-title {
-        display: block;
-        color: #666666;
-        padding: 10PX;
-    }
-
     .item-sub-title {
         color: #9f9fa1;
         position: absolute;
         top: 10PX;
         right: 30PX;
+        font-size: 14PX;
     }
 
     .icon-keyboardarrowright {

@@ -15,7 +15,7 @@
         </div>
         <div>
             <span class="column-title">已绑定账号</span>
-            <div class="item-div" v-for="n in 5">
+            <div class="item-div" v-for="n in 5" @click="toUnwound">
                 <span>12121212</span>
                 <span class="item-sub-title">解绑</span>
                 <i class="iconfont icon-keyboardarrowright"></i>
@@ -42,6 +42,7 @@
         display: block;
         color: #666666;
         padding: 10PX;
+        font-size: 14PX;
     }
 
     .item-sub-title {
@@ -49,6 +50,7 @@
         position: absolute;
         top: 10PX;
         right: 30PX;
+        font-size: 14PX;
     }
 
     .icon-keyboardarrowright {
@@ -72,6 +74,11 @@
         components: {
             [Header.name]: Header,
             [Button.name]: Button
+        },
+        methods: {
+            toUnwound: function () {
+                this.$router.push('/unwoundBinding');
+            }
         }
     }
 </script>
