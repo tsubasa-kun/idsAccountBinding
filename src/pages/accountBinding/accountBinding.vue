@@ -7,7 +7,7 @@
         </mt-header>
         <div>
             <span class="column-title">默认账号</span>
-            <div class="item-div">
+            <div class="item-div" @click="toChange">
                 <span>无默认账号</span>
                 <span class="item-sub-title">去设置</span>
                 <i class="iconfont icon-keyboardarrowright"></i>
@@ -78,6 +78,9 @@
         methods: {
             toUnwound: function () {
                 this.$router.push('/unwoundBinding');
+            },
+            toChange: function () {
+                this.$router.push('/changeDefault');
             }
         }
     }

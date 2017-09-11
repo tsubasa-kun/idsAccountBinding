@@ -14,7 +14,7 @@
                 <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
             </div>
         </div>
-        <mt-button type="danger" size="large" class="bind-btn">解除绑定</mt-button>
+        <mt-button type="danger" size="large" class="unwound-btn">解除绑定</mt-button>
     </div>
 </template>
 
@@ -70,7 +70,7 @@
         right: 12PX;
     }
 
-    .bind-btn {
+    .unwound-btn {
         background-color: #009de4;
         width: 84%;
         margin: 40PX auto;
