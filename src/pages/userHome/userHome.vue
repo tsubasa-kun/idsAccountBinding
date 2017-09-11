@@ -1,11 +1,27 @@
 <template>
     <div>
-        <mt-header class="top-header" fixed title="个人设置"></mt-header>
+        <mt-header class="top-header" title="个人设置"></mt-header>
         <div class="banner-div"></div>
-        <div class="item-div">修改用户名</div>
-        <div class="item-div">修改密码</div>
-        <div class="item-div">手机绑定</div>
-        <div class="item-div">身份绑定</div>
+        <div class="item-div">
+            <span>修改用户名</span>
+            <span class="item-sub-title">设置</span>
+            <i class="iconfont icon-keyboardarrowright"></i>
+        </div>
+        <div class="item-div">
+            <span>修改密码</span>
+            <span class="item-sub-title">设置</span>
+            <i class="iconfont icon-keyboardarrowright"></i>
+        </div>
+        <div class="item-div">
+            <span>手机绑定</span>
+            <span class="item-sub-title">设置</span>
+            <i class="iconfont icon-keyboardarrowright"></i>
+        </div>
+        <div class="item-div" @click="toBinding">
+            <span>身份绑定</span>
+            <span class="item-sub-title">设置</span>
+            <i class="iconfont icon-keyboardarrowright"></i>
+        </div>
         <mt-button type="danger" size="large" class="logout-btn">退出登录</mt-button>
     </div>
 </template>
@@ -22,10 +38,32 @@
     }
 
     .item-div {
+        position: relative;
         background-color: white;
         width: 100%;
         margin-top: 1PX;
         padding: 10PX;
+    }
+
+    .column-title {
+        display: block;
+        color: #666666;
+        padding: 10PX;
+    }
+
+    .item-sub-title {
+        color: #9f9fa1;
+        position: absolute;
+        top: 10PX;
+        right: 30PX;
+    }
+
+    .icon-keyboardarrowright {
+        color: #9f9fa1;
+        position: absolute;
+        top: 10PX;
+        right: 10PX;
+        font-size: 20PX;
     }
 
     .logout-btn {
@@ -40,6 +78,11 @@
         components: {
             [Header.name]: Header,
             [Button.name]: Button
+        },
+        methods: {
+            toBinding: function () {
+                this.$router.push('/accountBinding');
+            }
         }
     }
 </script>
