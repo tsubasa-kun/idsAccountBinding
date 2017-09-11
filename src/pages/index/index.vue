@@ -17,7 +17,7 @@
             <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
         </div>
         <span class="forget-tip">忘记密码？</span>
-        <mt-button type="primary" size="large" class="bind-btn">绑定</mt-button>
+        <mt-button type="primary" size="large" class="bind-btn" @click="toHome">绑定</mt-button>
     </div>
 </template>
 
@@ -147,6 +147,9 @@
                     $('#pwd')[0].type = 'password';
                 }
                 this.canSee = !this.canSee;
+            },
+            toHome: function () {
+                this.$router.push('/userHome');
             }
         }
     }
