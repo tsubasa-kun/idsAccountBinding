@@ -8,11 +8,11 @@
         </div>
         <div class="input-div mt20">
             <i class="iconfont icon-person"></i>
-            <input type="text" class="input-input" placeholder="用户名">
+            <input type="text" class="input-input" placeholder="用户名" v-model="account">
         </div>
         <div class="input-div mt10">
             <i class="iconfont icon-lock"></i>
-            <input id="pwd" type="password" class="input-input" placeholder="登录密码">
+            <input id="pwd" type="password" class="input-input" placeholder="登录密码" v-model="password">
             <i v-if="!canSee" class="iconfont icon-visibilityoff" @click="changeCanSee"></i>
             <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
         </div>
@@ -128,12 +128,14 @@
 </style>
 
 <script type="text/javascript">
-    import {Button} from 'mint-ui';
+    import {Button, Toast} from 'mint-ui';
     import $ from 'jquery';
     export default {
         data() {
             return {
-                canSee: false
+                canSee: false,
+                account: '',
+                password: ''
             }
         },
         components: {
@@ -149,7 +151,17 @@
                 this.canSee = !this.canSee;
             },
             toHome: function () {
-                this.$router.push('/userHome');
+                if(this.account.length <= 0) {
+                    Toast('请输入用户名');
+                } else if(this.password.length <= 0) {
+                    Toast('请输入密码');
+                } else {
+                    if(this.account == 111 && this.password == 111) {
+                        this.$router.push('/bindingFailed');
+                    } else {
+                        this.$router.push('/userHome');
+                    }
+                }
             }
         }
     }

@@ -9,11 +9,11 @@
             <span class="column-title">请输入要绑定账号的账号密码</span>
             <div class="input-div">
                 <span class="input-label">账号</span>
-                <input type="text" class="input-input" placeholder="点击输入">
+                <input type="text" class="input-input" placeholder="点击输入" v-model="account">
             </div>
             <div class="input-div">
                 <span class="input-label">验证密码</span>
-                <input id="pwd" type="password" class="input-input" placeholder="点击输入">
+                <input id="pwd" type="password" class="input-input" placeholder="点击输入" v-model="password">
                 <i v-if="!canSee" class="iconfont icon-visibilityoff" @click="changeCanSee"></i>
                 <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
             </div>
@@ -89,7 +89,9 @@
     export default {
         data() {
             return {
-                canSee: false
+                canSee: false,
+                account: '',
+                password: ''
             }
         },
         components: {
@@ -106,9 +108,15 @@
                 this.canSee = !this.canSee;
             },
             doBinding: function () {
-                Toast('账号或密码不正确');
-                Toast('绑定成功');
-                this.$router.go(-1);
+                if(this.account.length <= 0) {
+                    Toast('请输入账号');
+                } else if(this.password.length <= 0) {
+                    Toast('请输入密码');
+                } else {
+                    Toast('账号或密码不正确');
+                    Toast('绑定成功');
+                    this.$router.go(-1);
+                }
             }
         }
     }

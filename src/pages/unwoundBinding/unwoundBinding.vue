@@ -9,7 +9,7 @@
             <span class="column-title">请验证要解绑账号（121212）的密码</span>
             <div class="input-div">
                 <span class="input-label">验证密码</span>
-                <input id="pwd" type="password" class="input-input" placeholder="点击输入">
+                <input id="pwd" type="password" class="input-input" placeholder="点击输入" v-model="password">
                 <i v-if="!canSee" class="iconfont icon-visibilityoff" @click="changeCanSee"></i>
                 <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
             </div>
@@ -85,7 +85,8 @@
     export default {
         data() {
             return {
-                canSee: false
+                canSee: false,
+                password: ''
             }
         },
         components: {
@@ -102,9 +103,13 @@
                 this.canSee = !this.canSee;
             },
             doUndoud: function () {
-                Toast('密码不正确，无法解绑');
-                Toast('解绑成功');
-                this.$router.go(-1);
+                if(this.password.length <= 0) {
+                    Toast('请输入密码');
+                } else {
+                    Toast('密码不正确，无法解绑');
+                    Toast('解绑成功');
+                    this.$router.go(-1);
+                }
             }
         }
     }
