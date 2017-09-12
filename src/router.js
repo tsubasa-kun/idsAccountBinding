@@ -4,6 +4,7 @@ import accountBinding from './pages/accountBinding/accountBinding.vue';
 import unwoundBinding from './pages/unwoundBinding/unwoundBinding.vue';
 import changeDefault from './pages/changeDefault/changeDefault.vue';
 import addBinding from './pages/addBinding/addBinding.vue';
+import bindingFailed from './pages/bindingFailed/bindingFailed.vue';
 export default {
     routes: [
         {
@@ -29,6 +30,10 @@ export default {
         {
             path: '/addBinding',
             component: addBinding
+        },
+        {
+            path: '/bindingFailed',
+            component: bindingFailed
         }
     ]
 };
