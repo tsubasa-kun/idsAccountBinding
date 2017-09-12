@@ -14,7 +14,7 @@
                 <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
             </div>
         </div>
-        <mt-button type="danger" size="large" class="unwound-btn">解除绑定</mt-button>
+        <mt-button type="danger" size="large" class="unwound-btn" @click="doUndoud">解除绑定</mt-button>
     </div>
 </template>
 
@@ -80,7 +80,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button} from 'mint-ui';
+    import {Header, Button, Toast} from 'mint-ui';
     import $ from 'jquery';
     export default {
         data() {
@@ -100,6 +100,11 @@
                     $('#pwd')[0].type = 'password';
                 }
                 this.canSee = !this.canSee;
+            },
+            doUndoud: function () {
+                Toast('密码不正确，无法解绑');
+                Toast('解绑成功');
+                this.$router.go(-1);
             }
         }
     }

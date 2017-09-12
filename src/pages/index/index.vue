@@ -3,7 +3,7 @@
         <div>
             <img class="app-icon" :src="'./static/assets/icon_weixin.png'">
             <span class="app-name">金智大学服务号</span>
-            <span class="logined-text">已登录微信：布朗大王</span>
+            <span class="logined-text">已登录微信：XXXX</span>
             <span class="login-tip">初次登陆必须与学校账号进行绑定</span>
         </div>
         <div class="input-div mt20">

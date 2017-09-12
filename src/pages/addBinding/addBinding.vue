@@ -18,7 +18,7 @@
                 <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
             </div>
         </div>
-        <mt-button type="danger" size="large" class="add-btn">添加绑定</mt-button>
+        <mt-button type="danger" size="large" class="add-btn" @click="doBinding">添加绑定</mt-button>
     </div>
 </template>
 
@@ -84,7 +84,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button} from 'mint-ui';
+    import {Header, Button, Toast} from 'mint-ui';
     import $ from 'jquery';
     export default {
         data() {
@@ -104,6 +104,11 @@
                     $('#pwd')[0].type = 'password';
                 }
                 this.canSee = !this.canSee;
+            },
+            doBinding: function () {
+                Toast('账号或密码不正确');
+                Toast('绑定成功');
+                this.$router.go(-1);
             }
         }
     }

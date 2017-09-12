@@ -12,7 +12,7 @@
             </router-link>
         </div>
         <mt-radio align="right" v-model="account" :options="accounts"></mt-radio>
-        <mt-button type="danger" size="large" class="save-btn">保存</mt-button>
+        <mt-button type="danger" size="large" class="save-btn" @click="doSave">保存</mt-button>
     </div>
 </template>
 
@@ -49,7 +49,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button, Radio, Cell} from 'mint-ui';
+    import {Header, Button, Radio, Cell, Toast} from 'mint-ui';
     import $ from 'jquery';
 
     export default {
@@ -91,6 +91,10 @@
                     $('#pwd')[0].type = 'password';
                 }
                 this.canSee = !this.canSee;
+            },
+            doSave: function () {
+                Toast('保存成功');
+                this.$router.go(-1);
             }
         }
     }

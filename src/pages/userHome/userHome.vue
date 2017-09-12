@@ -14,8 +14,7 @@
         </div>
         <div class="item-div">
             <span>手机绑定</span>
-            <span class="item-sub-title">设置</span>
-            <i class="iconfont icon-keyboardarrowright"></i>
+            <span class="set-btn">未绑定</span>
         </div>
         <div class="item-div" @click="toBinding">
             <span>身份绑定</span>
@@ -35,7 +34,7 @@
 
     .banner-div {
         width: 100%;
-        height: 160PX;
+        height: 120PX;
         background-color: rgba(0, 0, 0, 0.4);
     }
 
@@ -53,6 +52,18 @@
         top: 10PX;
         right: 30PX;
         font-size: 14PX;
+    }
+
+    .set-btn {
+        background-color: #ff9800;
+        border: solid 1PX #ff9800;
+        border-radius: 4PX;
+        position: absolute;
+        top: 8PX;
+        right: 16PX;
+        font-size: 14PX;
+        color: white;
+        padding: 2PX 4PX 2PX 4PX;
     }
 
     .icon-keyboardarrowright {
