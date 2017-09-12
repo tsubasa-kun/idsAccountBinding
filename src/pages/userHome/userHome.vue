@@ -70,7 +70,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button} from 'bh-mint-ui2';
+    import {Header, Button} from 'mint-ui';
     export default {
         components: {
             [Header.name]: Header,

@@ -128,7 +128,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Button} from 'bh-mint-ui2';
+    import {Button} from 'mint-ui';
     import $ from 'jquery';
     export default {
         data() {

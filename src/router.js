@@ -3,6 +3,7 @@ import userHome from './pages/userHome/userHome.vue';
 import accountBinding from './pages/accountBinding/accountBinding.vue';
 import unwoundBinding from './pages/unwoundBinding/unwoundBinding.vue';
 import changeDefault from './pages/changeDefault/changeDefault.vue';
+import addBinding from './pages/addBinding/addBinding.vue';
 export default {
     routes: [
         {
@@ -24,6 +25,10 @@ export default {
         {
             path: '/changeDefault',
             component: changeDefault
+        },
+        {
+            path: '/addBinding',
+            component: addBinding
         }
     ]
 };

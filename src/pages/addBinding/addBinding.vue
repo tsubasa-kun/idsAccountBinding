@@ -1,12 +1,16 @@
 <template>
     <div>
-        <mt-header class="top-header" title="解绑账号">
+        <mt-header class="top-header" title="添加绑定">
             <router-link to="/accountBinding" slot="left">
                 <mt-button icon="back"></mt-button>
             </router-link>
         </mt-header>
         <div>
-            <span class="column-title">请验证要解绑账号（121212）的密码</span>
+            <span class="column-title">请输入要绑定账号的账号密码</span>
+            <div class="input-div">
+                <span class="input-label">账号</span>
+                <input type="text" class="input-input" placeholder="点击输入">
+            </div>
             <div class="input-div">
                 <span class="input-label">验证密码</span>
                 <input id="pwd" type="password" class="input-input" placeholder="点击输入">
@@ -14,7 +18,7 @@
                 <i v-else class="iconfont icon-visibility" @click="changeCanSee"></i>
             </div>
         </div>
-        <mt-button type="danger" size="large" class="unwound-btn">解除绑定</mt-button>
+        <mt-button type="danger" size="large" class="add-btn">添加绑定</mt-button>
     </div>
 </template>
 
@@ -38,7 +42,7 @@
         width: 100%;
         padding: 10PX;
         text-align: left;
-        margin: auto;
+        margin: 1PX auto;
     }
 
     .input-label {
@@ -72,7 +76,7 @@
         right: 12PX;
     }
 
-    .unwound-btn {
+    .add-btn {
         background-color: #009de4;
         width: 84%;
         margin: 40PX auto;

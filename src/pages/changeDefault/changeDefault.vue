@@ -7,7 +7,9 @@
         </mt-header>
         <div class="column-title-div">
             <span class="column-title">选择默认账号</span>
-            <span class="donot-btn">不设置默认</span>
+            <router-link to="/accountBinding">
+                <span class="donot-btn">不设置默认</span>
+            </router-link>
         </div>
         <mt-radio align="right" v-model="account" :options="accounts"></mt-radio>
         <mt-button type="danger" size="large" class="save-btn">保存</mt-button>
@@ -35,7 +37,7 @@
         color: #009de4;
         font-size: 14PX;
         position: absolute;
-        top: 10PX;
+        top: 12PX;
         right: 10PX;
     }
 
@@ -47,7 +49,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button, Radio, Cell} from 'bh-mint-ui2';
+    import {Header, Button, Radio, Cell} from 'mint-ui';
     import $ from 'jquery';
 
     export default {

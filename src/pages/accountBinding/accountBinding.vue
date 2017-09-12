@@ -21,7 +21,7 @@
                 <i class="iconfont icon-keyboardarrowright"></i>
             </div>
         </div>
-        <mt-button type="danger" size="large" class="bind-btn">添加绑定</mt-button>
+        <mt-button type="danger" size="large" class="bind-btn" @click="toAdd">添加绑定</mt-button>
     </div>
 </template>
 
@@ -71,7 +71,7 @@
 </style>
 
 <script type="text/javascript">
-    import {Header, Button} from 'bh-mint-ui2';
+    import {Header, Button} from 'mint-ui';
     export default {
         components: {
             [Header.name]: Header,
@@ -83,6 +83,9 @@
             },
             toChange: function () {
                 this.$router.push('/changeDefault');
+            },
+            toAdd: function () {
+                this.$router.push('/addBinding');
             }
         }
     }
