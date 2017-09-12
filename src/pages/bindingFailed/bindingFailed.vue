@@ -56,7 +56,7 @@
         },
         methods: {
             toHome: function () {
-                this.$router.push('/userHome');
+                this.$router.push('/');
             }
         }
     }
