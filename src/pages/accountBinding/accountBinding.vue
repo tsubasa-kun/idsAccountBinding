@@ -28,6 +28,8 @@
 <style scoped>
     .top-header {
         background-color: white;
+        color: black;
+        font-size: 16PX;
     }
 
     .item-div {

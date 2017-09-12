@@ -17,6 +17,8 @@
 <style scoped>
     .top-header {
         background-color: white;
+        color: black;
+        font-size: 16PX;
     }
 
     .column-title-div {
@@ -52,7 +54,7 @@
         data() {
             return {
                 canSee: false,
-                account: [],
+                account: '',
                 accounts: [
                     {
                         label: '121212',

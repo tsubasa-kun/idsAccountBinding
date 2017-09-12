@@ -1,14 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app.vue';
-import Mint from 'bh-mint-ui2';
-import { Toast } from 'bh-mint-ui2';
+// import Mint from 'bh-mint-ui2';
+// import { Toast } from 'bh-mint-ui2';
+import Mint from 'mint-ui';
+import { Toast } from 'mint-ui';
 import route from './router';
-import * as utils from './utils'
-import api from './api'
-import 'bh-mint-ui2/lib/style.css'
-import init from 'bh-mixin-sdk'
-
+import * as utils from './utils';
+import api from './api';
+// import 'bh-mint-ui2/lib/style.css'
+import 'mint-ui/lib/style.css';
+import init from 'bh-mixin-sdk';
 Vue.use(Mint);
 Vue.use(VueRouter);
 const router = new VueRouter(route);
